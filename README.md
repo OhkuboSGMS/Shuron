@@ -40,7 +40,6 @@ brew install ghostscript
 1. [article.md](https://github.com/OhkuboSGMS/Tokuen/blob/master/article.md)にレポートを書きます
 2. [abstract.tex](https://github.com/OhkuboSGMS/Tokuen/blob/master/article.tex)に英語のアブストラクトを書きます
 3. [referene.bib](https://github.com/OhkuboSGMS/Tokuen/blob/master/reference.bib)に参考文献を書きます
-3.
 4. [mp2.sh](https://github.com/OhkuboSGMS/Tokuen/blob/master/mp2.sh)で[article.md](https://github.com/OhkuboSGMS/Tokuen/blob/master/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
 
 
@@ -71,7 +70,7 @@ brew install ghostscript
 
 ```
 
-##変換処理
+## 変換処理
 
 mdをtexファイルに変換
 ```
