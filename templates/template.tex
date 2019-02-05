@@ -1,0 +1,58 @@
+\documentclass[10pt,a4paper,twocolumn]{jarticle}
+%
+\usepackage[margin=20mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{longtable}
+\usepackage[dvipdfm]{hyperref}
+
+
+\makeatletter
+\def\tightlist{\itemsep1pt\parskip0pt\parsep0pt}
+
+\def\@maketitle{
+\begin{flushright}
+  $if(date)$ $date$ $endif$
+\end{flushright}
+
+\begin{flushleft}
+{\large \bf $if(thesis)$ $thesis$ $endif$ \par} %演習
+{\bf 題　目: $if(title)$ $title$$endif$ \par }% 論文のタイトル
+{ 　　　\bf $if(titleE)$ $titleE$ $endif$ \par}
+{\bf 発表者:$if(author)$ $author$ $endif$ \par }% 発表者
+{ 　　　\bf $if(authorE)$ $authorE$ $endif$ \par }% 発表者
+{\bf 所　属:$if(labo)$ $labo$ $endif$ \par }	% 所属
+{ 　　　\bf $if(laboE)$ $laboE$ $endif$ }
+
+\end{flushleft}
+}
+
+\makeatother
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\renewcommand{\abstractname}{\normalsize Abstract}
+
+
+\begin{document}
+    \twocolumn[
+    \begin{@twocolumnfalse}
+      \maketitle
+      \begin{abstract}
+        \input{abstract}
+      \end{abstract}
+    \end{@twocolumnfalse}
+  ]
+
+  %  \input {article}
+  $body$
+
+\bibliographystyle{junsrt}
+\bibliography{reference}
+\end{document}
