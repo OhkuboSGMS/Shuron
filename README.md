@@ -19,12 +19,12 @@
 
 
 # インストール
-* ![pandoc](http://pandoc.org/installing.html)
+* [pandoc](http://pandoc.org/installing.html)
 * pandoc-crossref
 * pandoc-citeproc
-* ![basicTex](https://texwiki.texjp.org/?BasicTeX)
+* [basicTex](https://texwiki.texjp.org/?BasicTeX)
 
-macのLatex環境->![リンク]（https://qiita.com/sira/items/d7f5c411ccb0f90c43d8）
+macのLatex環境->[link](https://qiita.com/sira/items/d7f5c411ccb0f90c43d8)
 
 mac-brewであれば
 ```
@@ -37,24 +37,24 @@ brew install ghostscript
 # 使い方
 
 1. このリポジトリをダウンロードします
-1. ![article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)にレポートを書きます
-2. ![abstract.tex](https://github.com/OhkuboSGMS/paper/blob/master/article.tex)に英語のアブストラクトを書きます
+1. [article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)にレポートを書きます
+2. [abstract.tex](https://github.com/OhkuboSGMS/paper/blob/master/article.tex)に英語のアブストラクトを書きます
 3. reference.bibに参考文献を書きます
 3.
-4. mp2.shで![article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
+4. mp2.shで[article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
 
 
 ## タイトルとか日時とかを変えたい
 
-![article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)の一番上の部分のthesisとかtitleを変更すればOK
+[article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)の一番上の部分のthesisとかtitleを変更すればOK
 
 ## mdでの書き方
-![article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)に基本的な書き方を載せていますので参考にしてください.
+[article.md](https://github.com/OhkuboSGMS/paper/blob/master/article.md)に基本的な書き方を載せていますので参考にしてください.
 
-またこちらの![記事](https://qiita.com/Kumassy/items/5b6ae6b99df08fb434d9)もオススメです
+またこちらの[記事](https://qiita.com/Kumassy/items/5b6ae6b99df08fb434d9)もオススメです
 
 ## 参考文献のスタイル
-![https://www.zotero.org/styles](https://www.zotero.org/styles)でお好みのスタイルをダウンロードしてきて mp2.shのcslの部分を変更してください.
+[https://www.zotero.org/styles](https://www.zotero.org/styles)でお好みのスタイルをダウンロードしてきて mp2.shのcslの部分を変更してください.
 ## ファイル構造
 ```
 ├── aaai.csl (参考文献の参照スタイル)
