@@ -42,6 +42,15 @@ brew install ghostscript
 3. [referene.bib](https://github.com/OhkuboSGMS/Tokuen/blob/master/reference.bib)に参考文献を書きます
 4. [mp2.sh](https://github.com/OhkuboSGMS/Tokuen/blob/master/mp2.sh)で[article.md](https://github.com/OhkuboSGMS/Tokuen/blob/master/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
 
+```
+  sh mp2.sh article
+
+  or
+
+  ./mp2.sh article
+
+```
+
 
 ## タイトルとか日時とかを変えたい
 
