@@ -37,10 +37,12 @@ brew install ghostscript
 ```shell script
 sudo tlmgr update --self --all
 sudo tlmgr install collection-langjapanese
-
-
 ```
 
+pandocfilter(python)のインストール
+```shell script
+sudo pip install pandocfilters
+```
 
 # 使い方
 
