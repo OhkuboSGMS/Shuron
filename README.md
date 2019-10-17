@@ -33,6 +33,14 @@ brew cask install basictex
 brew install ghostscript
 ```
 
+日本語環境のインストール
+```shell script
+sudo tlmgr update --self --all
+sudo tlmgr install collection-langjapanese
+
+
+```
+
 
 # 使い方
 
@@ -80,14 +88,18 @@ brew install ghostscript
 ```
 
 ## 変換処理
+mp2.shの内容です
 
-mdをtexファイルに変換
+markdownをtexに変換
 ```
 pandoc  --bibliography=reference.bib --csl=aaai.csl  --filter pandoc-crossref $1.md -o $1.tex  --filter tbl-filter.py --data-dir . --template template.tex
 
 ```
 
-texをdviに変換 dviをpdfに変換
+texをdviに変換
+ 
+dviをpdfに変換
+
 texの参照解決に2回platexを実行
 ```
 platex $1.tex  -o $1.dvi
