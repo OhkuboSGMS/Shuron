@@ -41,7 +41,8 @@ sudo tlmgr install collection-langjapanese
 
 pandocfilter(python)のインストール
 ```shell script
-sudo pip install pandocfilters
+sudo pip3 install pandocfilters
+sudo pip3 install pandoc-include # markdown内でmarkdownを埋め込み
 ```
 
 # 使い方
@@ -52,6 +53,9 @@ sudo pip install pandocfilters
 3. [referene.bib](https://github.com/OhkuboSGMS/Tokuen/blob/master/reference.bib)に参考文献を書きます
 4. [mp2.sh](https://github.com/OhkuboSGMS/Tokuen/blob/master/mp2.sh)で[article.md](https://github.com/OhkuboSGMS/Tokuen/blob/master/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
 
+## 変換の実行
+
+mardkdwon -> latex -> dvi -> pdf 
 ```
   sh mp2.sh article
 
@@ -109,3 +113,10 @@ platex $1.tex  -o $1.dvi
 dvipdfmx $1.dvi
 open $1.pdf
 ```
+
+
+# 注意事項
+ * sectionラベルの付け方は{#sec:~}じゃないとだめ
+ * labelにunderline(_)は認識されない
+ * citeの順番を引用順にするには`csl`の<bibliography/>
+ のsortの中身を消す(消した).

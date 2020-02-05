@@ -1,41 +1,47 @@
-\documentclass[10pt,a4paper]{jarticle}
+\documentclass[10pt,a4paper,dvipdfmx]{jreport}
 %
+%\usepackage{thesis}
 \usepackage[margin=30mm]{geometry}
 \usepackage{amsmath,amssymb}
 \usepackage{bm}
 \usepackage{booktabs}
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}
 \usepackage{longtable}
 \usepackage[dvipdfm]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{listings}
 
+\usepackage {framed,color}
+\usepackage{url}
+
+\def\UrlBreaks{\do\/\do-}
+
+%\let\longtable\table
+%\let\endlongtable\endtable
+%\newenvironment{Shaded}{\Huge}{}
+%\definecolor{shadecolor}{RGB}{255,200,200}
+
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+{$if(csl-hanging-indent)$\setlength{\parindent}{0pt}%
+\everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces$endif$}%
+{\par}
+$endif$
 
 \makeatletter
 \def\tightlist{\itemsep1pt\parskip0pt\parsep0pt}
+\renewcommand{\chapter}{%
+\if@openright\cleardoublepage\else\clearpage\fi
+\global\@topnum\z@
+\secdef\@chapter\@schapter}
 
-\def\@maketitle{
-
-\begin{center}
-      {\fontsize{45pt}{40pt}\selectfont \bf $if(thesis)$ $thesis$ $endif$ \par} %修士論文
-      \vspace{2cm}
-
-      {\fontsize{30pt}{40pt}\selectfont
-      \bf $if(title)$ $title$$endif$ \par }% タイトル
-
-      {\fontsize{30pt}{40pt}\selectfont
-      \bf $if(author)$ $author$ $endif$ \par }% 発表者
-      \vspace{3cm}
-
-      {\fontsize{20pt}{10pt}\selectfont
-      \bf $if(date)$ $date$ $endif$ \par }% 日時
-      \vspace{13cm}
-      {\fontsize{20pt}{10pt}\selectfont
-      \bf $if(labo)$ $labo$ $endif$ \par }	% 所属
-
-\end{center}
-}
-
+\makeatletter
+\def\fps@figure{H}
 \makeatother
+
 
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -43,45 +49,124 @@
 \makeatother
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
+\renewcommand{\lstlistingname}{コード}
+
+\renewcommand{\baselinestretch}{1.1}
 
 \renewcommand{\abstractname}{\normalsize Abstract}
 \renewcommand{\headrulewidth}{0.0pt}
 
 
 \begin{document}
-%    \twocolumn[
-%    \begin{@twocolumnfalse}
-      \maketitle
-      \thispagestyle{empty}
-      \newpage
-      \begin{abstract}
-        \input{abstract}
-      \end{abstract}
-      \newpage
+    %    \twocolumn[
+    %    \begin{@twocolumnfalse}
+    \begin{center}
+    {\fontsize{38pt}{40pt}\selectfont \bf $if(thesis)$ $thesis$ $endif$ \par} %修士論文
+        \vspace{5cm}
 
-      \pagenumbering{roman}
-      \pagestyle{fancy}
-      \rhead{-\thepage-}
-      \lhead{}
-      \chead{}
-      \cfoot{}
-      \tableofcontents
-      \clearpage
-%    \end{@twocolumnfalse}
-%  ]
-\newpage
-\pagenumbering{arabic}
-\pagestyle{fancy}
-\rhead{-\thepage-}
-\chead{}
-\cfoot{}
+        {\fontsize{30pt}{40pt}\selectfont
+        \bf $if(title)$ $title$$endif$ \par }% タイトル
+        \vspace{1cm}
 
-$body$
+        {\fontsize{30pt}{40pt}\selectfont
+        $if(author)$ $author$ $endif$ \par }% 発表者
+        \vspace{1cm}
 
-\section*{謝辞}
-\addcontentsline{toc}{section}{謝辞}
-\input {acknowledgement}
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(date)$ $date$ $endif$ \par }% 日時
+        \vspace{8cm}
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(labo)$ $labo$ $endif$ \par }
+        % 所属
 
-\bibliographystyle{junsrt}
-\bibliography{reference}
+    \end{center}
+    \thispagestyle{empty}
+    \clearpage
+    %論文概要
+
+    \begin{center}
+    {\fontsize{38pt}{40pt}\selectfont \bf $if(thesis)$ $thesis$ $endif$ \par} %修士論文
+        \vspace{5cm}
+
+        {\fontsize{30pt}{40pt}\selectfont
+        \bf $if(title)$ $title$$endif$ \par }% タイトル
+        \vspace{1cm}
+        {\fontsize{30pt}{40pt}\selectfont
+        -論文概要- \par }
+        {\fontsize{30pt}{40pt}\selectfont
+        $if(author)$ $author$ $endif$ \par }% 発表者
+        \vspace{1cm}
+
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(date)$ $date$ $endif$ \par }% 日時
+        \vspace{6cm}
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(labo)$ $labo$ $endif$ \par }
+        % 所属
+    \end{center}
+
+    \thispagestyle{empty}
+    \clearpage
+
+    %    \begin{abstract}
+    \input{section/abstract/ja}
+    \thispagestyle{empty}
+
+    %    \end{abstract}
+    \clearpage
+
+    \begin{center}
+    {\fontsize{38pt}{40pt}\selectfont \bf MASTER'S THESIS \par} %修士論文
+        \vspace{5cm}
+
+        {\fontsize{30pt}{40pt}\selectfont
+        \bf $if(titleEn)$ $titleEn$ $endif$\par }% タイトル
+        \vspace{1cm}
+        {\fontsize{30pt}{40pt}\selectfont
+        -Synposis- \par }
+        {\fontsize{30pt}{40pt}\selectfont
+        $if(authorEn)$ $authorEn$ $endif$\par }% 発表者
+        \vspace{1cm}
+
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(dateEn)$ $dateEn$ $endif$ \par }% 日時
+        \vspace{5cm}
+        {\fontsize{20pt}{10pt}\selectfont
+        $if(laboEn)$ $laboEn$ $endif$
+        \par }
+        % 所属
+
+
+    \end{center}
+    \thispagestyle{empty}
+    \clearpage
+    \input{section/abstract/en}
+    \thispagestyle{empty}
+    \clearpage
+    %    \addtocontents{toc}{\protect\thispagestyle{fancy}}
+
+    \pagenumbering{roman}
+    \pagestyle{fancy}
+    %    \thispagestyle{fancy}
+    \rhead{-\thepage-}
+    \lhead{}
+    \chead{}
+    \cfoot{}
+
+    \tableofcontents
+
+
+    \clearpage
+
+
+    \pagenumbering{arabic}
+    \pagestyle{fancy}
+
+
+    $body$
+    \rhead{-\thepage-}
+    \chead{}
+    \cfoot{}
+
 \end{document}
+
