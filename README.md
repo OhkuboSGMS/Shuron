@@ -17,6 +17,11 @@
 
   日本語環境が必須
 
+# Docker 
+`git clone `
+
+`docker build Shuron`
+`docker run -it --name texenv2 -it -v ~/Documents:/workdir dc`
 
 # インストール
 * [pandoc](http://pandoc.org/installing.html)
