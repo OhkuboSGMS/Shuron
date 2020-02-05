@@ -1,50 +1,31 @@
 ---
-thesis: XXXXX特別演習
-title: タイトル #題目
-titleE: Title # 英語題目
-author: 発表者名 #発表者
-authorE: Author Name #英語　発表者
-labo: XXXX 研究室( XXXX研)
-laboE: AAAA lab.(XXXX lab.)
-date: 20XX/X/X G会場
+thesis: 修士論文
+thesisEn: MASTER`S THESIS
+title: 生成モデルのため大量のレベルを有する2Dプラットフォームゲーム環境の実装
+titleEn: Implementation of  2D Platform Game Environmentt  having Large Scale Levels for Generative Machine Learning
+author: 大久保 成将
+authorEn: Shigemasa Okubo
+labo: 情報電気工学専攻
+laboEn: Graduate School of Science and Technology,Kumamoto University
+date: 令和2年2月14日
+dateEn: 14.Feb.2020
+
 ---
-# はじめに
-Write Here Report
+$include section/1-introduction.md
 
-二段組
+$include section/2-preparation.md
 
-脚注[^voodoo]
-参考文献[@ref].
+$include section/3-conventional_method.md
 
-[@fig:img]はラベル参照
+$include section/4-proposed_method.md
 
-![キャプション](img/img.jpg){#fig:img}
+$include section/5-evaluation.md
 
+$include section/6-conclusion.md
 
-## 章とか
+$include section/acknowledgement.md
 
-### 他の
-　　テスト
-
-
- [@tbl:t] は表です.
-
-| 日常         | いいね |
-|--------------|------|
-| 起きる       | 3  |
-| 朝食をとる    | 6  |
-| 家を出る      | 10 |
-| 帰る　　　　　 | 0  |
-| 寝る         | 0   |
-:キャプション {#tbl:t}
+\chapter*{参考文献}
+<div id="refs"></div>
 
 
-
-
-式を[@eq:eval]に示す.
-
-$$ Eq =  \frac{\sum_{i=0}^{n} (Y_i - X_i)} {n}  $$ {#eq:eval}
-
-# 参考文献
-
-[^voo]: https://voo
