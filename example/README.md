@@ -67,14 +67,13 @@ docker build -t pandoc-thesis .
 # 使い方
 
 1. このリポジトリをダウンロードします　`git clone https://github.com/OhkuboSGMS/Shuron.git `
-2. templateフォルダに移動
-2. [article.md](template/article.md)には各章からなる構成が示されています.
-3. [section](template/section)に各章の内容を書きます.(背景,目的,関連研究,...etc)
-3. [abstract](template/abstract)に日本語,英語の概要を書きます
-4. [reference.bib](template/reference.bib)に参考文献を書きます
-5. [mp2.sh](template/mp2.sh)で[article.md](template/article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
+2. [article.md](./article.md)には各章からなる構成が示されています.
+3. [section](./section)に各章の内容を書きます.(背景,目的,関連研究,...etc)
+3. [abstract](./abstract)に日本語,英語の概要を書きます
+4. [reference.bib](./reference.bib)に参考文献を書きます
+5. [mp2.sh](./mp2.sh)で[article.md](./article.md)をpdfに変換(shが動かせない環境の場合はmp2.shの中身を見れば大体わかると思います)
 
-[img](template/img)フォルダに使用する画像を保存することをお勧めします.
+[img](./img)フォルダに使用する画像を保存することをお勧めします.
 
 [仕様書](./resource/仕様書.pdf)
 ## 変換の実行
@@ -82,7 +81,9 @@ docker build -t pandoc-thesis .
 mardkdown -> latex -> dvi -> pdf 
 ```
   sh mp2.sh article(markdownファイル名,拡張子はつけない)
-  もしくは
+
+  or
+
   ./mp2.sh article
 
 ```
