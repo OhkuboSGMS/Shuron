@@ -4,8 +4,10 @@ platex $1.tex  -o $1.dvi
 platex $1.tex  -o $1.dvi
 dvipdfmx $1.dvi
 rm $1.dvi $1.log $1.toc $1.out $1.aux
-open $1.pdf
 
+if which open ; then
+ open $1.pdf
+fi
 
 # -F pandoc-citeproc --bibliography=reference.bib
 # --filter tbl-filter.py

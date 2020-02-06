@@ -8,11 +8,7 @@ RUN apk update && \
         curl \
         wget \
         jq \
-        python3 \
-        git
-#    pandoc-citeproc \
-#    texlive-lang-japanese \
-#    xzdec
+        python3
 
 
 # Download Lateest pandoc
@@ -32,5 +28,5 @@ RUN mkdir pandoc  \
 ENV PATH /workdir/pandoc:$PATH
 ENV PATH /workdir/pandoc/bin:$PATH
 RUN pip3 install pandoc-include pandocfilters
-#RUN tlmgr init-usertree
-#
+
+WORKDIR /markdown
